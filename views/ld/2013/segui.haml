@@ -1,0 +1,22 @@
+%h1 Segnala la tua presenza agli interventi
+%h2 Linux Day 2013 - BGlug
+
+%p Puoi segnalarci la tua presenza utilizzando il seguente modulo.
+
+#segui
+  %form(action="/ld/2013/conferma" method="post")
+    %label(for="nome") Nome e Cognome
+    %input(type='text' name='nome' size='50')
+    %br
+    %label(for='accompagnatore') Porterai altre persone con te?
+    %input(type='radio' name='accompagnatore' value='si') Sì &nbsp;
+    %input(type='radio' name='accompagnatore' value='no') No
+    %br
+    %label(for='accompagnati') Se sì, quante persone pensi di accompagnare?
+    %input(type='text' name='accompagnati' value='0')
+    %br
+    %label(for='note') Note
+    %input(type="textarea" name="note" rows="5" cols="50")
+    .buttons
+      %input(type="submit" name="submit" value="Conferma")
+      %input(type="reset" name="cancel" value="Cancella modulo")

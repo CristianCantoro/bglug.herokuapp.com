@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/captcha'
 require 'haml'
 require 'kramdown'
 require 'kramdown-haml'
