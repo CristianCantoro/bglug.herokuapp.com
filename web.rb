@@ -13,6 +13,18 @@ get '/ld/2013/?' do
   haml 'ld/2013/index'.to_sym, :format => :html5, :layout => :linuxday
 end
 
+get '/ld/2013/about' do
+  haml 'ld/2013/about'.to_sym, :format => :html5, :layout => :linuxday
+end
+
+get '/ld/2013/programma' do
+  haml 'ld/2013/programma'.to_sym, :format => :html5, :layout => :linuxday
+end
+
+get '/ld/2013/partecipa' do
+  haml 'ld/2013/partecipa'.to_sym, :format => :html5, :layout => :linuxday
+end
+
 get '/ld/2013/segui' do
   haml 'ld/2013/segui'.to_sym, :format => :html5, :layout => :linuxday
 end
@@ -56,6 +68,7 @@ post '/ld/2013/conferma' do
         oo[row, 4] = params[:sessione]
         oo[row, 5] = params[:formato]
         oo[row, 6] = params[:abstract]
+	oo[row, 7] = params[:altrerichieste]
         oo.synchronize()
 
         haml 'ld/2013/conferma_presenta'.to_sym, :format => :html5, :layout => :linuxday, :locals => params

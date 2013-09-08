@@ -1,7 +1,42 @@
-%h1 Presenta un argomento
-%h2 Linux Day 2013 - BGlug
+:markdown
+  # Presenta un argomento #
 
-%p Puoi segnalarci che vuoi presentare un argomento al Linux Day completando il seguente modulo.
+  ## Linux Day 2013 - BGlug ##
+
+  Proponi un intervento < [Partecipa](/ld/2013/partecipa) < [Home](/ld/2013/)
+  {: .pagenav}
+
+  Ecco qualche ulteriore indicazione su come partecipare, proponendo un proprio intervento durante la giornata del Linux Day.
+
+  ### Call For Papers ###
+
+  Nei prossimi giorni verrà annunciato un *call for papers*, che conterrà tutte le indicazioni per sottoporre all'attenzione del BGlug il proprio prodotto.
+
+  Il BGlug, una volta raccolte tutte le adesioni per gli interventi, procederà a selezionare quelli che considera interessanti e degni di evidenza, quindi procederà a definitivizzare il programma.
+
+  ### Formato dell'intervento ###
+
+  È possibile presentare un intervento secondo le seguenti modalità:
+
+  * **Presentazione** (*talk*): è la classica presentazione, solitamente accompagnata da slides o altro materiale visuale che dovrebbe guidare l'auditorium nel corso della presentazione. La durata di questo tipo di intervento è solitamente di 40--45 minuti di talk più una sessione di 10--15 minuti per le domande e il "cambio palco";
+  * **Workshop** (*lab*): è un tipo di intervento di approfondimento pratico di un argomento specifico. Anche in questo caso la durata massima per l'intervento è 40--45 minuti più 10--15 minuti per le domande e il "cambio palco";
+  * **_Lightning talk_**: Una forma molto più rapida di talk, più adeguata per l'esposizione di argomenti non troppo articolati. La durata massima per questo tipo di intervento è di 10--15 minuti più 5 minuti di domande e "cambio palco";
+  * **Dimostrazione** (*demo*): questo formato permette di fare delle dimostrazioni di funzionamento di particolari software o procedure. Solitamente la demo è di durata inferiore ai 30 minuti;
+  * **Dibattito** o **Tavola rotonda**: è una forma di intervento che ha come scopo il coinvolgimento degli astanti con una serie di domande; solitamente, chi propone l'intervento avrà poi il compito di mediare la discussione. Solitamente viene lasciato un tempo non inferiore ai 45 minuti.
+
+  Per chi ancora non si sentisse all'altezza di presentare un argomento al Linux Day ma che avrebbe piacere di veder trattato un argomento di suo interesse, è possibile riempire i campi e scegliere il formato di presentazione **Proposta di intervento**.
+
+  Se qualcuno dei soci del BGlug avrà sufficienti informazioni riguardo ad un argomento proposto, sarà possibile che l'argomento che avrete richiesto venga trattato ugualmente.
+
+
+  ### Sessioni ###
+
+  Verificando annualmente una grossa affluenza di studenti degli istituti tecnici della città di Bergamo soprattutto la mattina, il Linux Day viene organizzato per prevedere due sessioni:
+
+  * **Sessione divulgativa**: solitamente corrisponde alla prima parte del Linux Day, dalle 9.00 alle 13.00 circa. All'interno di questo periodo di tempo, l'affluenza agli interventi risulta essere appannaggio di persone non tecniche, quindi si preferisce dare visibilità agli interventi meno tecnici durante la mattina;
+  * **Sessione tecnica**: durante le ore pomeridiane (14.00--18.00) è invece più forte la presenza dei tecnici che partecipano alle attività del Linux Day. Pertanto, gli argomenti più difficoltosi o che richiedono una certa *knowledge* vengono programmati per il pomeriggio.
+
+  Puoi segnalarci che vuoi presentare un argomento al Linux Day completando il seguente modulo.
 
 .forms
   :javascript
@@ -15,7 +50,8 @@
           captcha_answer: "required",
           nome: {
             required: true,
-            minlength: 3
+            minlength: 3,
+            maxlength: 50
           },
           email: {
             required: true,
@@ -23,11 +59,15 @@
           },
           titolo: {
             required: true,
-            maxlength: 50,
-            minlength: 5
+            minlength: 5,
+            maxlength: 50
           },
           abstract: {
             maxlength: 300
+          },
+          altrerichieste: {
+            minlength: 3,
+            maxlength: 50
           },
           captcha_answer: {
             minlength: 4,
@@ -51,6 +91,16 @@
           $('#counter').html(char + ' lettere rimanenti.');
         }
       });
+      $('#altrerichieste').keyup(function() {
+        var max = 300;
+        var len = $(this).val().length;
+        if (len >= max) {
+          $('#counter').text("Termine lettere a disposizione.");
+        } else {
+          var char = max - len;
+          $('#arcounter').html(char + ' lettere rimanenti.');
+        }
+      });
     });
   %form(action="/ld/2013/conferma" method="post" id="presenta")
     %table
@@ -58,44 +108,52 @@
         %th
           %label(for="nome") Nome e Cognome <span class="required">*</span>
         %td
-          %input(type='text' name='nome' autofocus required)
+          %input(type='text' name='nome' autofocus required placeholder="Linus Torvalds")
       %tr
         %th
           %label(for='email') Email <span class="required">*</span>
         %td
-          %input(type='email' name='email' required)
+          %input(type='email' name='email' required placeholder="tux@linux.it")
       %tr
         %th
           %label(for='titolo') Qual è il titolo (anche provvisorio) del tuo intervento? <span class="required">*</span>
         %td
-          %input(type='text' name='titolo' required)
+          %input(type='text' name='titolo' required placeholder="La sapete l'ultima?")
       %tr
         %th
           %label(for='sessione') In quale sessione preferiresti presentare?
         %td
           %select(name='sessione')
-            %option(value="Mattina") Mattutina (stampo divulgativo)
-            %option(value="Pomeriggio") Pomeridiana (stampo tecnico)
+            %option(value="Mattina") Sessione divulgativa (mattino)
+            %option(value="Pomeriggio") Sessione tecnica (pomeriggio)
             %option(value="-" selected) È indifferente/non ho preferenze
       %tr
         %th
           %label(for="formato") Che formato avrà la tua presentazione?
         %td
           %select(name="formato")
-            %option(value="Talk") Presentazione normale (talk, circa 40 min.)
-            %option(value="Lightning Talk")
+            %option(value="Talk") Presentazione (talk)
+            %option(valie="Workshop") Workshop (lab)
+            %option(value="Lightning talk")
               %em Lightning talk
-              (circa 15 min.)
-            %option(value="Lab") Laboratorio (circa 40 min.)
-            %option(value="Demo") Dimostrazione (circa 40 min.)
+            %option(value="Demo") Dimostrazione (demo)
+            %option(value="Dibattito") Dibattito/Tavola Rotonda
+            %option(value="Proposta") Proposta di argomento
             %option(value="-" selected) Non lo so ancora
       %tr
         %th
           %label(for='abstract') Breve sommario del tuo intervento
         %td
-          %textarea#abstract(name="abstract" rows="6" cols="40" maxlength="300")
+          %textarea#abstract(name="abstract" rows="6" cols="40" maxlength="300" placeholder="Scrivi qui qualche riga riguardo alla tua presentazione")
           %br
-          %p#counter 300 lettere rimanenti.
+          %p.counter#counter 300 lettere rimanenti.
+      %tr
+        %th
+          %label(for='altrerichieste') Altre necessità per la presentazione
+        %td
+          %textarea#altrerichieste(name="altrerichieste" rows="6" cols="40" placeholder="Scrivi qui altro materiale necessario al tuo intervento (PC e proiettore sono sempre forniti)")
+          %br
+          %p.counter#arcounter 300 lettere rimanenti.
       = haml 'ld/2013/captcha'.to_sym
     .buttons
       %input(type='hidden' name='azione' value='presenta')

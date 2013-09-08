@@ -1,7 +1,16 @@
-%h1 Segnala la tua presenza agli interventi
-%h2 Linux Day 2013 - BGlug
+:markdown
+  # Segnala la tua presenza agli interventi #
 
-%p Puoi segnalarci la tua presenza utilizzando il seguente modulo.
+  ## BGlug @ Linux Day 2013 ##
+
+  Presenza agli interventi < [Partecipa](/ld/2013/partecipa) < [Home](/ld/2013/)
+  {: .pagenav}
+
+  La partecipazione agli interventi che verranno accettati e che saranno sul [programma](/ld/2013/programma) del Linux Day 2013 sarà libera, senza quota di iscrizione e senza impegno di partecipazione.
+
+  Tuttavia, visto che in passato abbiamo avuto un grande seguito, avremo bisogno di sapere quante persone ospiteremo per l'evento in modo da organizzare al meglio gli spazi.
+
+  Puoi segnalarci la tua presenza utilizzando il seguente modulo.
 
 .forms
   :javascript
@@ -52,12 +61,12 @@
         %th
           %label(for="nome") Nome e Cognome <span class="required">*</span>
         %td
-          %input(type='text' name='nome' autofocus required)
+          %input(type='text' name='nome' autofocus required placeholder="Linus Torvalds")
       %tr
         %th
           %label(for='email') Email <span class="required">*</span>
         %td
-          %input(type='email' name='email' required)
+          %input(type='email' name='email' required placeholder="tux@linux.it")
       %tr
         %th Porterai altre persone con te?
         %td
@@ -70,14 +79,14 @@
         %th
           %label(for='accompagnati') Se sì, quante persone pensi di accompagnare?
         %td
-          %input(type='text' name='accompagnati' value='0')
+          %input(type='text' name='accompagnati' placeholder='0')
       %tr
         %th
           %label(for='note') Note
         %td
-          %textarea#note(name="note" rows="6" cols="40" maxlength="300")
+          %textarea#note(name="note" rows="6" cols="40" maxlength="300" placeholder="Digita qui le tue note")
           %br
-          %p#counter 300 lettere rimanenti.
+          %p.counter#counter 300 lettere rimanenti.
       = haml 'ld/2013/captcha'.to_sym
     .buttons
       %input(type='hidden' name='azione' value='segui')

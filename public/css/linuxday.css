@@ -54,6 +54,11 @@ th {
 td {
   text-align: right; }
 
+.pagenav {
+  display: absolute;
+  font-size: 9px;
+  text-align: right; }
+
 .required {
   color: red; }
 
@@ -77,7 +82,7 @@ td {
       top: -15px;
       right: 3px;
       z-index: 99; }
-    .forms table #counter {
+    .forms table .counter {
       position: relative;
       font-size: 9px;
       top: -10px;
@@ -99,3 +104,29 @@ td {
   .forms .buttons {
     margin: 10px auto;
     text-align: center; }
+
+#navigation {
+  display: block;
+  position: absolute;
+  float: left;
+  top: 200px;
+  left: 10px;
+  width: 200px; }
+  #navigation li {
+    list-style-type: none;
+    margin: 10px auto; }
+    #navigation li a {
+      display: block;
+      font-family: 'Luckiest Guy', 'Tahoma';
+      text-decoration: none;
+      text-shadow: 0.1em 0.1em #333;
+      border-radius: 5px;
+      width: 150px;
+      padding: 5px 10px;
+      text-align: center;
+      margin: 5px auto;
+      padding-top: 10px;
+      background: orange;
+      color: white; }
+    #navigation li a:hover {
+      text-decoration: underline; }
