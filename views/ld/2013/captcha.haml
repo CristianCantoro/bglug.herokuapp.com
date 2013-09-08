@@ -1,0 +1,8 @@
+%tr
+  %th
+    %label(for="captcha-image") Dimostra di non essere un bot <span class="required">*</span>
+  %td
+    .captcha
+      = captcha_image_tag
+      %br
+      = captcha_answer_tag

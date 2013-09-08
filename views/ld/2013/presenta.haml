@@ -3,8 +3,56 @@
 
 %p Puoi segnalarci che vuoi presentare un argomento al Linux Day completando il seguente modulo.
 
-#presenta
-  %form(action="/ld/2013/conferma" method="post")
+.forms
+  :javascript
+    $().ready(function() {
+      // Valida form.
+      $("#presenta").validate({
+        rules: {
+          nome: "required",
+          email: "required",
+          titolo: "required",
+          captcha_answer: "required",
+          nome: {
+            required: true,
+            minlength: 3
+          },
+          email: {
+            required: true,
+            email: true
+          },
+          titolo: {
+            required: true,
+            maxlength: 50,
+            minlength: 5
+          },
+          abstract: {
+            maxlength: 300
+          },
+          captcha_answer: {
+            minlength: 4,
+            maxlength: 4
+          }
+        },
+        messages: {
+          name: "Inserisci il tuo nome e cognome, di almeno 3 lettere.",
+          email: "Inserisci un indirizzo email valido.",
+          titolo: "Inserisci un titolo anche provvisorio (min: 5 lettere, max: 50 lettere)",
+          abstract: "Il sommario non può essere più lungo di 300 caratteri."
+        }
+      });
+      $('#abstract').keyup(function() {
+        var max = 300;
+        var len = $(this).val().length;
+        if (len >= max) {
+          $('#counter').text("Termine lettere a disposizione.");
+        } else {
+          var char = max - len;
+          $('#counter').html(char + ' lettere rimanenti.');
+        }
+      });
+    });
+  %form(action="/ld/2013/conferma" method="post" id="presenta")
     %table
       %tr
         %th
@@ -45,7 +93,10 @@
         %th
           %label(for='abstract') Breve sommario del tuo intervento
         %td
-          %textarea(name="abstract" rows="10" cols="40" maxlength="300")
+          %textarea#abstract(name="abstract" rows="6" cols="40" maxlength="300")
+          %br
+          %p#counter 300 lettere rimanenti.
+      = haml 'ld/2013/captcha'.to_sym
     .buttons
       %input(type='hidden' name='azione' value='presenta')
       %input(type="submit" name="submit" value="Conferma")

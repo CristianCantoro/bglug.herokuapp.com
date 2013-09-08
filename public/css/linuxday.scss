@@ -70,16 +70,61 @@ td {
     color: red;
 }
 
-#segui, #presenta, #installa {
+.forms {
     margin: 0.8em auto;
     padding: 5px 10px;
 
     table {
 	margin: 0px auto;
 
+	tr {
+	    margin: 5px auto;
+	}
+
+	td {
+	    position: relative;
+	}
+
 	input {
 	    margin-bottom: 10px;
 	    width: 300px;
+	}
+
+	label.error {
+	    color: red;
+	    font-weight: bold;
+	    float: right;
+	    position: absolute;
+	    top: -15px;
+	    right: 3px;
+	    z-index: 99;
+	}
+
+	#counter {
+	    position: relative;
+	    font-size: 9px;
+	    top: -10px;
+	    right: 6px;
+	}
+    }
+
+    .captcha {
+	width: 300px;
+	text-align: center;
+
+	img {
+	    width: 130px;
+	    margin: 0px auto;
+	}
+
+	label.error {
+	    color: red;
+	    font-weight: bold;
+	    float: right;
+	    position: absolute;
+	    top: 115px;
+	    right: 3px;
+	    z-index: 99;
 	}
     }
 

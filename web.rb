@@ -2,6 +2,7 @@ require 'sinatra'
 require 'haml'
 require 'kramdown'
 require 'kramdown-haml'
+require 'sinatra/captcha'
 require 'google_drive'
 
 get '/' do
@@ -29,7 +30,7 @@ get '/ld/2013/piudonnealbglug' do
 end
 
 post '/ld/2013/conferma' do
-  if params[:submit] == 'Conferma'
+  if params[:submit] == 'Conferma' and captcha_pass?
     case params[:azione]
       when 'segui' then 
         session = GoogleDrive.login('bglug.herokuapp@gmail.com', 'kill4win')
@@ -74,20 +75,11 @@ post '/ld/2013/conferma' do
 
         haml 'ld/2013/conferma_installa'.to_sym, :format => :html5, :layout => :linuxday, :locals => params
     end
+  else
+    haml 'ld/2013/invalid_captcha'.to_sym, :format => :html5, :layout => :linuxday
   end
 end
 
 not_found do
   haml :notfound
 end
-
-__END__
-
-@@notfound
-!!!
-%html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en")
-  %head
-    %meta(charset="UTF-8")
-    %title 404 - Not Found
-  %body
-    %p{style="margin: auto; text-align: center; font-size: 40px"} 404 - Not Found.
