@@ -25,7 +25,7 @@ get '/ld/2013/installa' do
 end
 
 get '/ld/2013/piudonnealbglug' do
-  redirect 'https://docs.google.com/spreadsheet/ccc?key=0AiGfqla6ISdEdEJHYnNJYVEyS09ER2ctU203eVJVc0E&usp=sharing'
+  redirect 'https://docs.google.com/document/d/1JBV1CyibIEd6YJqdA1OpRAJB7SVNg6SYKqC3y2nwOS8/edit?usp=sharing'
 end
 
 post '/ld/2013/conferma' do
