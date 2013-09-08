@@ -1,0 +1,22 @@
+%h1 Grazie per aver confermato la tua presentazione!
+
+%p Ecco quanto abbiamo registrato del tuo intervento:
+%table
+  %tr
+    %th Nome e Cognome
+    %td= params[:nome]
+  %tr
+    %th Email
+    %td= params[:email]
+  %tr
+    %th Titolo (provvisorio)
+    %td= params[:titolo]
+  %tr
+    %th Sessione di preferenza
+    %td= params[:sessione]
+  %tr
+    %th Formato della presentazione
+    %td= params[:formato]
+  %tr
+    %th Sommario
+    %td= params[:abstract]

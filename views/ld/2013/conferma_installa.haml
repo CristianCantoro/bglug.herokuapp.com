@@ -1,0 +1,25 @@
+%h1 Grazie per aver confermato di voler installare Linux sul tuo PC!
+
+%p Ecco la conferma dei tuoi dati:
+%table
+  %tr
+    %th Nome e Cognome
+    %td= params[:nome]
+  %tr
+    %th Email
+    %td= params[:email]
+  %tr
+    %th Tipo di PC
+    %td= params[:tipo]
+  %tr
+    %th CPU
+    %td= params[:cpu]
+  %tr
+    %th RAM
+    %td= params[:ram]
+  %tr
+    %th Versione di Ubuntu preferita
+    %td= params[:flavor]
+  %tr
+    %th Note
+    %td= params[:note]

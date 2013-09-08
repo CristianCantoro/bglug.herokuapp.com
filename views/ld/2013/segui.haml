@@ -5,19 +5,36 @@
 
 #segui
   %form(action="/ld/2013/conferma" method="post")
-    %label(for="nome") Nome e Cognome
-    %input(type='text' name='nome' size='50')
-    %br
-    %label(for='accompagnatore') Porterai altre persone con te?
-    %input(type='radio' name='accompagnatore' value='si') Sì
-    &nbsp;
-    %input(type='radio' name='accompagnatore' value='no') No
-    %br
-    %label(for='accompagnati') Se sì, quante persone pensi di accompagnare?
-    %input(type='text' name='accompagnati' value='0')
-    %br
-    %label(for='note') Note
-    %input(type="textarea" name="note" rows="5" cols="50")
+    %table
+      %tr
+        %th
+          %label(for="nome") Nome e Cognome <span class="required">*</span>
+        %td
+          %input(type='text' name='nome' autofocus required)
+      %tr
+        %th
+          %label(for='email') Email <span class="required">*</span>
+        %td
+          %input(type='email' name='email' required)
+      %tr
+        %th Porterai altre persone con te?
+        %td
+          %label(for='si') Sì
+          %input(type='radio' id='si' name='accompagnatore' value='Sì' style="width: auto;")
+          %br
+          %label(for='no') No
+          %input(type='radio' id='no' name='accompagnatore' value='No' style="width: auto;" checked)
+      %tr
+        %th
+          %label(for='accompagnati') Se sì, quante persone pensi di accompagnare?
+        %td
+          %input(type='text' name='accompagnati' value='0')
+      %tr
+        %th
+          %label(for='note') Note
+        %td
+          %textarea(name="note" rows="10" cols="40" maxlength="300")
     .buttons
+      %input(type='hidden' name='segui' value='true')
       %input(type="submit" name="submit" value="Conferma")
       %input(type="reset" name="cancel" value="Cancella modulo")

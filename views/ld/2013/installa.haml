@@ -1,0 +1,53 @@
+%h1 Segnala che vorresti che ti installassimo Linux
+%h2 Linux Day 2013 - BGlug
+
+%p Puoi segnalarci la tua intenzione di installare GNU/Linux sul tuo PC compilando il seguente modulo.
+
+#installa
+  %form(action="/ld/2013/conferma" method="post")
+    %table
+      %tr
+        %th
+          %label(for="nome") Nome e Cognome <span class="required">*</span>
+        %td
+          %input(type='text' name='nome' autofocus="on" required)
+      %tr
+        %th
+          %label(for='email') Email <span class="required">*</span>
+        %td
+          %input(type='email' name='email' required)
+      %tr
+        %th Che tipo di PC hai?
+        %td
+          %select(name="tipo")
+            %option(value="Portatile" checked) Portatile
+            %option(value="Fisso") Fisso
+      %tr
+        %th
+          %label(for='cpu') Che CPU ha il tuo PC?
+        %td
+          %input(type='text' name='cpu' placeholder='es. Intel Atom 450')
+      %tr
+        %th
+          %label(for='ram') Quanta RAM ha il tuo PC?
+        %td
+          %input(type='text' name='ram' placeholder='es. 1 GB')
+      %tr
+        %th
+          %label(for='ram') Che versione di Ubuntu preferisci?
+        %td
+          %select(name="flavor")
+            %option(value="Ubuntu") Ubuntu
+            %option(value="Kubuntu") Kubuntu
+            %option(value="Xubuntu") Xubuntu
+            %option(value="Lubuntu") Lubuntu
+            %option(value="-" selected) Non so/mi faccio consigliare da voi
+      %tr
+        %th
+          %label(for='note') Note
+        %td
+          %textarea(name="note" rows="10" cols="40" maxlength="300")
+    .buttons
+      %input(type='hidden' name='segui' value='true')
+      %input(type="submit" name="submit" value="Conferma")
+      %input(type="reset" name="cancel" value="Cancella modulo")

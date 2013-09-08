@@ -41,14 +41,30 @@ h3 {
   border-bottom: 3px solid black;
   text-align: center; }
 
-#segui {
-  border: 1px black solid;
-  border-radius: 15px;
-  width: 500px;
+label {
+  vertical-align: top; }
+
+input {
+  margin-right: 0px; }
+
+th {
+  text-align: left;
+  vertical-align: top; }
+
+td {
+  text-align: right; }
+
+.required {
+  color: red; }
+
+#segui, #presenta, #installa {
   margin: 0.8em auto;
   padding: 5px 10px; }
-  #segui input {
-    margin-bottom: 10px; }
-  #segui .buttons {
+  #segui table, #presenta table, #installa table {
+    margin: 0px auto; }
+    #segui table input, #presenta table input, #installa table input {
+      margin-bottom: 10px;
+      width: 300px; }
+  #segui .buttons, #presenta .buttons, #installa .buttons {
     margin: 10px auto;
     text-align: center; }

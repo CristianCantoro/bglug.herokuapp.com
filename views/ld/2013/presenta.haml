@@ -1,0 +1,52 @@
+%h1 Presenta un argomento
+%h2 Linux Day 2013 - BGlug
+
+%p Puoi segnalarci che vuoi presentare un argomento al Linux Day completando il seguente modulo.
+
+#presenta
+  %form(action="/ld/2013/conferma" method="post")
+    %table
+      %tr
+        %th
+          %label(for="nome") Nome e Cognome <span class="required">*</span>
+        %td
+          %input(type='text' name='nome' autofocus required)
+      %tr
+        %th
+          %label(for='email') Email <span class="required">*</span>
+        %td
+          %input(type='email' name='email' required)
+      %tr
+        %th
+          %label(for='titolo') Qual è il titolo (anche provvisorio) del tuo intervento? <span class="required">*</span>
+        %td
+          %input(type='text' name='titolo' required)
+      %tr
+        %th
+          %label(for='sessione') In quale sessione preferiresti presentare?
+        %td
+          %select(name='sessione')
+            %option(value="Mattina") Mattutina (stampo divulgativo)
+            %option(value="Pomeriggio") Pomeridiana (stampo tecnico)
+            %option(value="-" selected) È indifferente/non ho preferenze
+      %tr
+        %th
+          %label(for="formato") Che formato avrà la tua presentazione?
+        %td
+          %select(name="formato")
+            %option(value="Talk") Presentazione normale (talk, circa 40 min.)
+            %option(value="Lightning Talk")
+              %em Lightning talk
+              (circa 15 min.)
+            %option(value="Lab") Laboratorio (circa 40 min.)
+            %option(value="Demo") Dimostrazione (circa 40 min.)
+            %option(value="-" selected) Non lo so ancora
+      %tr
+        %th
+          %label(for='abstract') Breve sommario del tuo intervento
+        %td
+          %textarea(name="abstract" rows="10" cols="40" maxlength="300")
+    .buttons
+      %input(type='hidden' name='presenta' value='true')
+      %input(type="submit" name="submit" value="Conferma")
+      %input(type="reset" name="cancel" value="Cancella modulo")

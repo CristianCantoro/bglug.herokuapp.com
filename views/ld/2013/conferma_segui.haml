@@ -1,0 +1,19 @@
+%h1 Grazie per aver confermato la tua presenza!
+
+%p Ecco la conferma dei tuoi dati:
+%table
+  %tr
+    %th Nome e Cognome
+    %td= params[:nome]
+  %tr
+    %th Email
+    %td= params[:email]
+  %tr
+    %th Accompagnerai qualcuno
+    %td= params[:accompagnatore]
+  %tr
+    %th Quante persone accompagnerai
+    %td= params[:accompagnati]
+  %tr
+    %th Note
+    %td= params[:note]
