@@ -1,7 +1,28 @@
-%h1 Anche per quest'anno, l'associazione
-#bgluglogo
-  %img{:src => '/images/bgluglogo.png', :alt => 'BGlug Logo', :title => 'BGlug'} 
+.row#slider
+	.col-md-10.col-md-offset-1
+		.carousel.slide#carousel-example-generic
+			%ol.carousel-indicators
+				%li(data-target='#carousel-example-generic' data-slide-to="0" class="active")
+				%li(data-target='#carousel-example-generic' data-slide-to="1")
+				%li(data-target='#carousel-example-generic' data-slide-to="2")
+			.carousel-inner
+				.item.active
+					%img(src="http://lorempixel.com/1000/400/sports/" alt="slide1")
+					.carousel-caption
+						%h3 First label
+				.item
+					%img(src="http://lorempixel.com/1000/400/sports/" alt="slide1")
+					.carousel-caption
+						%h3 Second label
+				.item
+					%img(src="http://lorempixel.com/1000/400/sports/" alt="slide1")
+					.carousel-caption
+						%h3 Third label
 
-%h1 organizza il
-#ldlogo
-  %img{:src => '/images/ldlogo.png', :alt => 'Linux Day 2013', :title => 'Linux Day 2013'}
+/%h1 Anche per quest'anno, l'associazione
+/#bgluglogo
+/  %img{:src => '/images/bgluglogo.png', :alt => 'BGlug Logo', :title => 'BGlug'} 
+
+/%h1 organizza il
+/#ldlogo
+/ %img{:src => '/images/ldlogo.png', :alt => 'Linux Day 2013', :title => 'Linux Day 2013'}
