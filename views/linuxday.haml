@@ -13,18 +13,21 @@
     %script(src="/js/bootstrap.min.js" type="text/javascript")
     %script(src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/localization/messages_it.js" type="text/javascript")
   %body
-    .container
-      .row#header
-        .col-md-3
-          %img#bgluglogo{:src => '/images/bgluglogo.png', :alt => 'BGlug Logo', :title => 'BGlug'}
-        .col-md-5.col-md-offset-4
-          %ul.nav.nav-pills
+    %nav.navbar.navbar-default(role="navigation")
+      .container
+        .navbar-header
+          %button.navbar-toggle(data-toggle="collapse" data-target=".navbar-ex1-collapse")
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand(href="#") Bglug
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          %ul.nav.navbar-nav.navbar-right
             %li
               %a(href="/ld/2013" title="Pagina principale") Home
             %li
               %a(href="/ld/2013/about" title="Cos'è il Linux Day?") Cos'è il Linux Day?
-            %li
-              %a(href="/ld/2013/programma" title="Programma") Programma
             %li.dropdown
               %a(class="dropdown-toggle" data-toggle="dropdown" href="#") Partecipa
               %ul.dropdown-menu
@@ -34,6 +37,14 @@
                   %a(href="/ld/2013/presenta") Proposte interventi
                 %li
                   %a(href="/ld/2013/installa") Installazione di GNU/Linux
+              
+    .container
+      .row#header
+        .col-md-3
+          %img#bgluglogo{:src => '/images/bgluglogo.png', :alt => 'BGlug Logo', :title => 'BGlug'}
+        .col-md-8.col-md-offset-1
+          .panel.panel-default
+            .panel-body#message-linus "Salve a tutti quelli che là fuori usano minix - sto per fare un sistema (libero) operativo (solo un hobby, non sarà grande e professionale come gnu) per cloni AT 386 (486). È stato messo su da aprile ed è pronto a partire. Mi piacerebbe ricevere risposte su ciò che piace/non piace in minix, dal momento che il mio OS gli somiglia in alcune cose (lo stesso layout fisico del filesystem (dovuto a ragioni pratiche) fra le altre cose). Attualmente vi ho trasferito bash (1.08) e gcc (1.40) e le cose sembrano funzionare."
       .row    
         #content
           = yield
