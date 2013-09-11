@@ -5,6 +5,7 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title Linux Day 2013 by BGlug
     //%link(rel="stylesheet" type="text/css" href="/css/linuxday.css")
+    %link(rel="icon" href="/images/ldfavicon.ico")
     %link(rel="stylesheet" type="text/css" href="/css/bootstrap.css")
     %link(rel="stylesheet" type="text/css" href="/css/style.css")
     %link(rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu|Luckiest+Guy")
@@ -22,7 +23,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand(href="#") Bglug
+          %a.navbar-brand(href="http://bglug.it/chisiamo/" title="BGlug - Chi siamo?" target="_new") Bglug
         .collapse.navbar-collapse.navbar-ex1-collapse
           %ul.nav.navbar-nav.navbar-right
             %li
@@ -42,7 +43,8 @@
     .container
       .row#header
         .col-md-3
-          %img#bgluglogo{:src => '/images/bgluglogo.png', :alt => 'BGlug Logo', :title => 'BGlug'}
+          %a(href="http://bglug.it" title="BGlug - Sito Ufficiale" target="_new")
+            %img#bgluglogo{:src => '/images/bgluglogo.png', :alt => 'BGlug Logo', :title => 'BGlug'}
         .col-md-8.col-md-offset-1
           .panel.panel-default
             .panel-body#message-linus "Salve a tutti quelli che là fuori usano minix - sto per fare un sistema (libero) operativo (solo un hobby, non sarà grande e professionale come gnu)..."
