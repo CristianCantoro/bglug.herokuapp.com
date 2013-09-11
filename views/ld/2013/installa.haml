@@ -1,49 +1,65 @@
-:markdown
-  # Segnala che vorresti che ti installassimo Linux #
-  
-  Installazione < [Partecipa](/ld/2013/partecipa) < [Home](/ld/2013/)
-  {: .pagenav}
+%ol.breadcrumb
+  %li
+    %a(href="/ld/2013") Home
+  %li
+    %a(href="#") Partecipa
+  %li
+    %a.active(href="/ld/2013/installa") Installa GNU/Linux
+.row
+  .container
+    %p Come tutti gli anni, sarà a vostra disposizione un gruppo di soci per effettuare l'installazione di un sistema operativo GNU/Linux sui vostri PC, anche mantenendo il vostro attuale sistema operativo se preferite.
+    %p Qui di seguito troverete qualche indicazione per arrivare preparati al Linux Day.
 
-  Come tutti gli anni, sarà a vostra disposizione un gruppo di soci per effettuare l'installazione di un sistema operativo GNU/Linux sui vostri PC, anche mantenendo il vostro attuale sistema operativo se preferite.
+    %h2 Operazioni preliminari
+    %p Dovrete assicurarvi di avere effettuato le seguenti operazioni preliminari, prima di arrivare con il vostro PC al Linux Day:
+    %ul
+      %li 
+        :markdown 
+          **Backup dei dati importanti**: di norma durante le installazioni non vengono mai persi dati, ma è sempre una buona idea avere almeno una copia dei dati che si ritengono importanti, prima di effettuare qualsiasi operazione sul vostro PC. Se non si è mai effettuato un backup, si consiglia di utilizzare il programma gratuito [Cobian Backup](http://www.cobiansoft.com/);
+        .alert.alert-warning chi vi aiuterà ad installare GNU/Linux non si assumerà alcuna responsabilità per i dati che venissero persi durante l'installazione. 
+      %li 
+        :markdown
+          **Deframmentazione del disco**: È necessario che il vostro disco sia deframmentato per poter creare spazio per GNU/Linux in fase di installazione. Questo passaggio di norma impegna una quantità di tempo proporzionale alla dimensione del disco ed è più lenta quanto più l'hardware è vecchio e il sistema non mantenuto. Potrete utilizzare l'utility apposita che è disponibile all'interno del vostro sistema operativo ([qui](https://www.google.it/search?q=deframmentazione+dei+dischi+windows) avrete qualche idea di come fare) oppure potrete utilizzare l'ottimo software gratuito [Defraggler](http://www.piriform.com/defraggler).
+    .alert.alert-warning 
+      :markdown 
+        **_Attenzione_**: Se non sono state effettuate queste due operazioni preliminari quando arrivate al Linux Day, gli installatori sono autorizzati a non procedere con l'installazione finché non avrete provveduto in autonomia a effettuare queste due operazioni.
+.row
+  .col-md-6  
+    %h2 Operazioni preliminari
+    %p Non abbiamo preferenza sul tipo di PC che portate per l'installazione, può essere un fisso o un portatile; se è un fisso, permetteteci di consigliarvi di portare con voi il mouse, la tastiera, il cavo di alimentazione e il monitor (se non avete un monitor LCD, lasciate a casa il vostro pesante monitor a tubo catodico: ne avremo uno a disposizione vostra!): potremmo averne da fornirvi temporaneamente per l'installazione, ma è sempre meglio portarseli da casa per essere certi.
+  .col-md-6
+    %h2 Hardware particolare
+    %p Se avete bisogno che i nostri volontari facciano funzionare periferiche che per voi sono fondamentali (es. webcam, stampanti, scanner, ecc.) ricordatevi di portarli con voi al Linux Day, altrimenti non saremo in grado di aiutarvi.
+.row
+  .col-md-12 
+    %h2 Ubuntu Flavors
+    %p Dopo molti anni di Linux Day, il BGlug è solito installare solamente *Ubuntu* durante le varie edizioni del Linux Day.
 
-  Qui di seguito troverete qualche indicazione per arrivare preparati al Linux Day.
+    Per quanto la scelta della distribuzione risulti quasi sempre un'opinione soggettiva, l'utilizzo di una distribuzione stabile e semplice, sia come interfaccia utente che come manutenibilità, come Ubuntu ha sempre garantito, ai nuovi utenti, funzionalità e tranquillità nell'utilizzo.
 
-  ### Operazioni preliminari ###
+    Al Linux Day pertanto non provvediamo ad installare altre versioni (o meglio, distribuzioni) di GNU/Linux ma ci atteniamo a Ubuntu. Se vorrete installare un'altra distribuzione, vi consigliamo di venire a trovarci il mercoledì sera in sede (si veda [qui](http://bglug.it/chisiamo/punti-di-ritrovo/)).
 
-  Dovrete assicurarvi di avere effettuato le seguenti operazioni preliminari, prima di arrivare con il vostro PC al Linux Day:
+    Le uniche variazioni che prevediamo nell'installazione riguardano i *flavors* di Ubuntu: versioni identiche dal punto di vista della dotazione in software disponibile ma che mettono a disposizione differenti interfacce grafiche.
 
-  * **Backup dei dati importanti**: di norma durante le installazioni non vengono mai persi dati, ma è sempre una buona idea avere almeno una copia dei dati che si ritengono importanti, prima di effettuare qualsiasi operazione sul vostro PC. *Attenzione*: chi vi aiuterà ad installare GNU/Linux non si assumerà alcuna responsabilità per i dati che venissero persi durante l'installazione. Se non si è mai effettuato un backup, si consiglia di utilizzare il programma gratuito [Cobian Backup](http://www.cobiansoft.com/);
-  * **Deframmentazione del disco**: È necessario che il vostro disco sia deframmentato per poter creare spazio per GNU/Linux in fase di installazione. Questo passaggio di norma impegna una quantità di tempo proporzionale alla dimensione del disco ed è più lenta quanto più l'hardware è vecchio e il sistema non mantenuto. Potrete utilizzare l'utility apposita che è disponibile all'interno del vostro sistema operativo ([qui](https://www.google.it/search?q=deframmentazione+dei+dischi+windows) avrete qualche idea di come fare) oppure potrete utilizzare l'ottimo software gratuito [Defraggler](http://www.piriform.com/defraggler).
-
-  **_Attenzione_**: Se non sono state effettuate queste due operazioni preliminari quando arrivate al Linux Day, gli installatori sono autorizzati a non procedere con l'installazione finché non avrete provveduto in autonomia a effettuare queste due operazioni.
-
-  ### PC Fissi ###
-
-  Non abbiamo preferenza sul tipo di PC che portate per l'installazione, può essere un fisso o un portatile; se è un fisso, permetteteci di consigliarvi di portare con voi il mouse, la tastiera, il cavo di alimentazione e il monitor (se non avete un monitor LCD, lasciate a casa il vostro pesante monitor a tubo catodico: ne avremo uno a disposizione vostra!): potremmo averne da fornirvi temporaneamente per l'installazione, ma è sempre meglio portarseli da casa per essere certi.
-
-  ### Hardware particolare ###
-
-  Se avete bisogno che i nostri volontari facciano funzionare periferiche che per voi sono fondamentali (es. webcam, stampanti, scanner, ecc.) ricordatevi di portarli con voi al Linux Day, altrimenti non saremo in grado di aiutarvi.
-
-  ### Ubuntu Flavors ###
-
-  Dopo molti anni di Linux Day, il BGlug è solito installare solamente *Ubuntu* durante le varie edizioni del Linux Day.
-
-  Per quanto la scelta della distribuzione risulti quasi sempre un'opinione soggettiva, l'utilizzo di una distribuzione stabile e semplice, sia come interfaccia utente che come manutenibilità, come Ubuntu ha sempre garantito, ai nuovi utenti, funzionalità e tranquillità nell'utilizzo.
-
-  Al Linux Day pertanto non provvediamo ad installare altre versioni (o meglio, distribuzioni) di GNU/Linux ma ci atteniamo a Ubuntu. Se vorrete installare un'altra distribuzione, vi consigliamo di venire a trovarci il mercoledì sera in sede (si veda [qui](http://bglug.it/chisiamo/punti-di-ritrovo/)).
-
-  Le uniche variazioni che prevediamo nell'installazione riguardano i *flavors* di Ubuntu: versioni identiche dal punto di vista della dotazione in software disponibile ma che mettono a disposizione differenti interfacce grafiche.
-
-  Saranno a vostra disposizione i seguenti flavors:
-
-  * [Ubuntu](http://ubuntu.com): È il più classico sistema GNU/Linux e utilizza un'interfaccia sviluppata appositamente per Ubuntu che si chiama Unity;
-  * [Kubuntu](http://kubuntu.com): È la stessa Ubuntu di prima ma con un differente ambiente grafico, a detta di molti più simile a Microsoft Windows;
-  * [Xubuntu](http://xubuntu.com): Sempre la solita Ubuntu, ma con un ambiente grafico più leggero ma allo stesso tempo accattivante e semplice da utilizzare;
-  * [Lubuntu](http://lubuntu.com): Sempre Ubuntu, ma con un ambiente grafico particolarmente adatto per PC datati e con hardware vecchio.
-  
-
-%p Puoi segnalarci la tua intenzione di installare GNU/Linux sul tuo PC compilando il seguente modulo.
+    Saranno a vostra disposizione i seguenti flavors:
+  .col-md-6
+    %ul
+      %li 
+        :markdown
+          [Ubuntu](http://ubuntu.com): È il più classico sistema GNU/Linux e utilizza un'interfaccia sviluppata appositamente per Ubuntu che si chiama Unity;
+      %li 
+        :markdown
+          [Kubuntu](http://kubuntu.com): È la stessa Ubuntu di prima ma con un differente ambiente grafico, a detta di molti più simile a Microsoft Windows;
+  .col-md-6
+    %ul
+      %li 
+        :markdown
+          [Xubuntu](http://xubuntu.com): Sempre la solita Ubuntu, ma con un ambiente grafico più leggero ma allo stesso tempo accattivante e semplice da utilizzare;
+      %li 
+        :markdown
+          [Lubuntu](http://lubuntu.com): Sempre Ubuntu, ma con un ambiente grafico particolarmente adatto per PC datati e con hardware vecchio.
+  .col-md-12
+    %p Puoi segnalarci la tua intenzione di installare GNU/Linux sul tuo PC compilando il seguente modulo.
 
 .forms
   :javascript
@@ -96,53 +112,47 @@
         }
       });
     });
-  %form#installa(action="/ld/2013/conferma" method="post")
-    %table
-      %tr
-        %th
-          %label(for="nome") Nome e Cognome <span class="required">*</span>
-        %td
-          %input(type='text' name='nome' required placeholder="Linus Torvalds")
-      %tr
-        %th
-          %label(for='email') Email <span class="required">*</span>
-        %td
-          %input(type='email' name='email' required placeholder="tux@linux.it")
-      %tr
-        %th Che tipo di PC hai?
-        %td
-          %select(name="tipo")
-            %option(value="Portatile" checked) Portatile
-            %option(value="Fisso") Fisso
-      %tr
-        %th
-          %label(for='cpu') Che CPU ha il tuo PC?
-        %td
-          %input(type='text' name='cpu' placeholder='es. Intel Atom 450')
-      %tr
-        %th
-          %label(for='ram') Quanta RAM ha il tuo PC?
-        %td
-          %input(type='text' name='ram' placeholder='es. 1 GB')
-      %tr
-        %th
-          %label(for='ram') Che versione di Ubuntu preferisci?
-        %td
-          %select(name="flavor")
-            %option(value="Ubuntu") Ubuntu
-            %option(value="Kubuntu") Kubuntu
-            %option(value="Xubuntu") Xubuntu
-            %option(value="Lubuntu") Lubuntu
-            %option(value="-" selected) Non so/mi faccio consigliare da voi
-      %tr
-        %th
-          %label(for='note') Note
-        %td
-          %textarea#note(name="note" rows="6" cols="40" placeholder="Scrivi qui ulteriori informazioni degne di nota")
-          %br
-          %p.counter#counter 300 lettere rimanenti.
+  %form.form-horizontal#installa(action="/ld/2013/conferma" method="post" role="form")
+    .form-group
+      %label.col-lg-2.control-label(for="nome") Nome e Cognome
+      .col-lg-6
+        %input.form-control(type='text' name='nome' required placeholder="Linus Torvalds")
+    .form-group
+      %label.col-lg-2.control-label(for="email") Email
+      .col-lg-6
+        %input.form-control(type='email' name='email' required placeholder="tux@linux.it")
+    .form-group
+      %label.col-lg-2.control-label Che tipo di PC hai?
+      .col-lg-6
+        %select.form-control
+          %option(value="Portatile" checked) Portatile
+          %option(value="Fisso") Fisso
+    .form-group
+      %label.col-lg-2.control-label(for='cpu') Che CPU ha il tuo PC?
+      .col-lg-6
+        %input.form-control(type='text' name='cpu' placeholder='es. Intel Atom 450')
+    .form-group
+      %label.col-lg-2.control-label(for='ram') Quanta RAM ha il tuo PC?
+      .col-lg-6
+        %input.form-control(type='text' name='ram' placeholder='es. 1 GB')
+    .form-group
+      %label.col-lg-2.control-label Che versione di Ubuntu preferisci?
+      .col-lg-6
+        %select.form-control
+          %option(value="Ubuntu") Ubuntu
+          %option(value="Kubuntu") Kubuntu
+          %option(value="Xubuntu") Xubuntu
+          %option(value="Lubuntu") Lubuntu
+          %option(value="-" selected) Non so/mi faccio consigliare da voi
+    .form-group
+      %label.col-lg-2.control-label(for='note') Note
+      .col-lg-6
+        %textarea.form-control(name="note" rows="6" placeholder="Scrivi qui ulteriori informazioni degne di nota")
+        %p.counter#counter 300 lettere rimanenti.
+    .form-group
       = haml 'ld/2013/captcha'.to_sym
-    .buttons
-      %input(type='hidden' name='azione' value='installa')
-      %input(type="submit" name="submit" value="Conferma")
-      %input(type="reset" name="cancel" value="Cancella modulo")
+    %input(type='hidden' name='azione' value='installa')
+    
+    .col-md-5.col-md-offset-2#bottoni-modulo
+      %button.btn.btn-success(type="submit button" name="submit" value="Conferma") Conferma
+      %button.btn.btn-warning(type="reset button" name="cancel" value="Cancella modulo") Cancella modulo
