@@ -21,3 +21,10 @@
 #mappa-image{
 	margin-top: 1em;
 }
+
+/* Google Maps */
+#map_canvas {
+  margin: 0px auto;
+  width: 700px;
+  height: 380px;
+}

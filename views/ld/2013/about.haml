@@ -41,6 +41,25 @@
       (BGlug)](http://bglug.it) organizza l'evento presso lo [Spazio Polaresco](http://www.giovani.bg.it/spazio-polaresco.html), in via del Polaresco 15 a Bergamo.
 .row
   .col-md-6.col-md-offset-3
+    %script(src="https://maps.googleapis.com/maps/api/js?sensor=false")
+    :javascript
+      function initialize() {
+        var polaresco = new google.maps.LatLng(45.6922, 9.6349); 
+        var marker = '/images/ldlogo_small.png';
+        var canvas = document.getElementById('map_canvas');
+        var marker = new google.maps.Marker({
+          position: polaresco,
+          map: map,
+          icon: marker
+        });
+        var mapOptions = {
+          center: polaresco,
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(canvas, mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
     %p
       %a{:href =>'https://maps.google.it/maps?q=Via+del+Polaresco,+15,+Bergamo+BG&hl=it&ll=45.692189,9.634881&spn=0.006535,0.007907&sll=45.657417,9.96278&sspn=2.004228,4.932861&oq=via+del+&t=h&hnear=Via+del+Polaresco,+15,+24129+Bergamo,+Provincia+di+Bergamo,+BG&z=17'}
-        %img#mappa-image{:src => '/images/mappa.png',:alt => 'Mappa',:title => 'Mappa'}
+        %div#map_canvas
