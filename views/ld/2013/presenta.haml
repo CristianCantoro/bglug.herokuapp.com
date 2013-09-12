@@ -1,9 +1,14 @@
+%ol.breadcrumb
+  %li
+    %a(href="/ld/2013/") Home
+  %li
+    %a(href="#") Partecipa
+  %li
+    %a.active(href="#") Proponi intervento
+
+%h2 Presenta o richiedi un argomento
+
 :markdown
-  # Presenta un argomento #
-
-  Proponi un intervento < [Partecipa](/ld/2013/partecipa) < [Home](/ld/2013/)
-  {: .pagenav}
-
   Ecco qualche ulteriore indicazione su come partecipare, proponendo un proprio intervento durante la giornata del Linux Day.
 
   ### Call For Papers ###
@@ -25,7 +30,6 @@
   Per chi ancora non si sentisse all'altezza di presentare un argomento al Linux Day ma che avrebbe piacere di veder trattato un argomento di suo interesse, è possibile riempire i campi e scegliere il formato di presentazione **Proposta di intervento**.
 
   Se qualcuno dei soci del BGlug avrà sufficienti informazioni riguardo ad un argomento proposto, sarà possibile che l'argomento che avrete richiesto venga trattato ugualmente.
-
 
   ### Sessioni ###
 
@@ -100,60 +104,52 @@
         }
       });
     });
-  %form(action="/ld/2013/conferma" method="post" id="presenta")
-    %table
-      %tr
-        %th
-          %label(for="nome") Nome e Cognome <span class="required">*</span>
-        %td
-          %input(type='text' name='nome' required placeholder="Linus Torvalds")
-      %tr
-        %th
-          %label(for='email') Email <span class="required">*</span>
-        %td
-          %input(type='email' name='email' required placeholder="tux@linux.it")
-      %tr
-        %th
-          %label(for='titolo') Qual è il titolo (anche provvisorio) del tuo intervento? <span class="required">*</span>
-        %td
-          %input(type='text' name='titolo' required placeholder="La sapete l'ultima?")
-      %tr
-        %th
-          %label(for='sessione') In quale sessione preferiresti presentare?
-        %td
-          %select(name='sessione')
-            %option(value="Mattina") Sessione divulgativa (mattino)
-            %option(value="Pomeriggio") Sessione tecnica (pomeriggio)
-            %option(value="-" selected) È indifferente/non ho preferenze
-      %tr
-        %th
-          %label(for="formato") Che formato avrà la tua presentazione?
-        %td
-          %select(name="formato")
-            %option(value="Talk") Presentazione (talk)
-            %option(valie="Workshop") Workshop (lab)
-            %option(value="Lightning talk")
-              %em Lightning talk
-            %option(value="Demo") Dimostrazione (demo)
-            %option(value="Dibattito") Dibattito/Tavola Rotonda
-            %option(value="Proposta") Proposta di argomento
-            %option(value="-" selected) Non lo so ancora
-      %tr
-        %th
-          %label(for='abstract') Breve sommario del tuo intervento
-        %td
-          %textarea#abstract(name="abstract" rows="6" cols="40" maxlength="300" placeholder="Scrivi qui qualche riga riguardo alla tua presentazione")
-          %br
-          %p.counter#counter 300 lettere rimanenti.
-      %tr
-        %th
-          %label(for='altrerichieste') Altre necessità per la presentazione
-        %td
-          %textarea#altrerichieste(name="altrerichieste" rows="6" cols="40" placeholder="Scrivi qui altro materiale necessario al tuo intervento (PC e proiettore sono sempre forniti)")
-          %br
-          %p.counter#arcounter 300 lettere rimanenti.
+  %form.form-horizontal#presenta(action="/ld/2013/conferma" method="post")
+    .form-group
+      %label.col-lg-2.control-label(for="nome") Nome e Cognome
+      .col-lg-6
+        %input.form-control(type='text' name='nome' required placeholder="Linus Torvalds")
+    .form-group
+      %label.col-lg-2.control-label(for='email') Email
+      .col-lg-6
+        %input.form-control(type='email' name='email' required placeholder="tux@linux.it")
+    .form-group
+      %label.col-lg-2.control-label(for='titolo') Qual è il titolo (anche provvisorio) del tuo intervento?
+      .col-lg-6
+        %input.form-control(type='text' name='titolo' required placeholder="La sapete l'ultima?")
+    .form-group
+      %label.col-lg-2.control-label(for='sessione') In quale sessione preferiresti presentare?
+      .col-lg-6
+        %select.form-control(name='sessione')
+          %option(value="Mattina") Sessione divulgativa (mattino)
+          %option(value="Pomeriggio") Sessione tecnica (pomeriggio)
+          %option(value="-" selected) È indifferente/non ho preferenze
+    .form-group
+      %label.col-lg-2.control-label(for="formato") Che formato avrà la tua presentazione?
+      .col-lg-6
+        %select.form-control(name="formato")
+          %option(value="Talk") Presentazione (talk)
+          %option(valie="Workshop") Workshop (lab)
+          %option(value="Lightning talk")
+            %em Lightning talk
+          %option(value="Demo") Dimostrazione (demo)
+          %option(value="Dibattito") Dibattito/Tavola Rotonda
+          %option(value="Proposta") Proposta di argomento
+          %option(value="-" selected) Non lo so ancora
+    .form-group
+      %label.col-lg-2.control-label(for='abstract') Breve sommario del tuo intervento
+      .col-lg-6
+        %textarea.form-control#abstract(name="abstract" rows="6" placeholder="Scrivi qui qualche riga riguardo alla tua presentazione")
+        %p.counter#counter 300 lettere rimanenti.
+    .form-group
+      %label.col-lg-2.control-label(for='altrerichieste') Altre necessità per la presentazione
+      .col-lg-6
+        %textarea.form-control#altrerichieste(name="altrerichieste" rows="6" placeholder="Scrivi qui altro materiale necessario al tuo intervento (PC e proiettore sono sempre forniti)")
+        %p.counter#arcounter 300 lettere rimanenti.
+    .form-group
       = haml 'ld/2013/captcha'.to_sym
-    .buttons
-      %input(type='hidden' name='azione' value='presenta')
-      %input(type="submit" name="submit" value="Conferma")
-      %input(type="reset" name="cancel" value="Cancella modulo")
+    %input(type='hidden' name='azione' value='presenta')
+
+    .col-md-5.col-md-offset2#bottoni-modulo
+      %button.btn.btn-success(type="submit" name="submit" value="Conferma") Conferma
+      %button.btn.btn-warning(type="reset" name="cancel" value="Cancella modulo") Cancella modulo

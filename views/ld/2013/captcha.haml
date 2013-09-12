@@ -4,7 +4,8 @@
     :javascript
       $().ready(function () {
         $('#captcha-answer').attr('placeholder', 'Immetti qui il testo mostrato sopra');
+        $('#captcha-answer').attr('class', 'form-control');
+        $('.captcha img').attr('style', 'margin-bottom: 10px;'); 
       });
     = captcha_image_tag
-    %br
     = captcha_answer_tag

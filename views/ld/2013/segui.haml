@@ -1,9 +1,14 @@
+%ol.breadcrumb
+  %li
+    %a(href="/ld/2013/") Home
+  %li
+    %a(href="#") Partecipa
+  %li
+    %a.active(href="#") Segui gli interventi
+
+%h2 Segnala la tua presenza agli interventi
+
 :markdown
-  # Segnala la tua presenza agli interventi #
-
-  Presenza agli interventi < [Partecipa](/ld/2013/partecipa) < [Home](/ld/2013/)
-  {: .pagenav}
-
   La partecipazione agli interventi che verranno accettati e che saranno sul [programma](/ld/2013/programma) del Linux Day 2013 sarà libera, senza quota di iscrizione e senza impegno di partecipazione.
 
   Tuttavia, visto che in passato abbiamo avuto un grande seguito, avremo bisogno di sapere quante persone ospiteremo per l'evento in modo da organizzare al meglio gli spazi.
@@ -53,40 +58,35 @@
         }
       });
     });
-  %form(action="/ld/2013/conferma" method="post" id="segui")
-    %table
-      %tr
-        %th
-          %label(for="nome") Nome e Cognome <span class="required">*</span>
-        %td
-          %input(type='text' name='nome' required placeholder="Linus Torvalds")
-      %tr
-        %th
-          %label(for='email') Email <span class="required">*</span>
-        %td
-          %input(type='email' name='email' required placeholder="tux@linux.it")
-      %tr
-        %th Porterai altre persone con te?
-        %td
-          %label(for='si') Sì
-          %input(type='radio' id='si' name='accompagnatore' value='Sì' style="width: auto;")
-          %br
-          %label(for='no') No
-          %input(type='radio' id='no' name='accompagnatore' value='No' style="width: auto;" checked)
-      %tr
-        %th
-          %label(for='accompagnati') Se sì, quante persone pensi di accompagnare?
-        %td
-          %input(type='text' name='accompagnati' placeholder='0')
-      %tr
-        %th
-          %label(for='note') Note
-        %td
-          %textarea#note(name="note" rows="6" cols="40" maxlength="300" placeholder="Digita qui le tue note")
-          %br
-          %p.counter#counter 300 lettere rimanenti.
+  %form.form-horizontal#segui(action="/ld/2013/conferma" method="post")
+    .form-group
+      %label.col-lg-2.control-label(for="nome") Nome e Cognome
+      .col-lg-6
+        %input.form-control(type='text' name='nome' required placeholder="Linus Torvalds")
+    .form-group
+      %label.col-lg-2.control-label(for='email') Email
+      .col-lg-6
+        %input.form-control(type='email' name='email' required placeholder="tux@linux.it")
+    .form-group
+      %label.col-lg-2.control-label(for='accompagnatore') Porterai altre persone con te?
+      .col-lg-6
+        %label(for='si') Sì
+        %input(type='radio' id='si' name='accompagnatore' value='Sì' style="width: auto;")
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        %label(for='no') No
+        %input(type='radio' id='no' name='accompagnatore' value='No' style="width: auto;" checked)
+    .form-group
+      %label.col-lg-2.control-label(for='accompagnati') Se sì, quante persone pensi di accompagnare?
+      .col-lg-6
+        %input.form-control(type='text' name='accompagnati' placeholder='0')
+    .form-group
+      %label.col-lg-2.control-label(for='note') Note
+      .col-lg-6
+        %textarea.form-control#note(name="note" rows="6" placeholder="Digita qui le tue note")
+        %p.counter#counter 300 lettere rimanenti.
+    .form-group
       = haml 'ld/2013/captcha'.to_sym
-    .buttons
-      %input(type='hidden' name='azione' value='segui')
-      %input(type="submit" name="submit" value="Conferma")
-      %input(type="reset" name="cancel" value="Cancella modulo")
+    %input(type='hidden' name='azione' value='segui')
+    .col-md-5.col-md-offset-2#bottoni-modulo
+      %button.btn.btn-success(type="submit" name="submit" value="Conferma") Conferma
+      %button.btn.btn-warning(type="reset" name="cancel" value="Cancella modulo") Cancella modulo
