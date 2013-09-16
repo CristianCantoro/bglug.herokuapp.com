@@ -1,5 +1,5 @@
 .row#slider
-	.col-md-10.col-md-offset-1
+	.col-md-8.col-md-offset-2
 		.carousel.slide#carousel-example-generic
 			%ol.carousel-indicators
 				%li(data-target='#carousel-example-generic' data-slide-to="0" class="active")
@@ -7,18 +7,20 @@
 				%li(data-target='#carousel-example-generic' data-slide-to="2")
 			.carousel-inner
 				.item.active
-					%img(src="http://lorempixel.com/1000/400/sports/" alt="slide1")
+					%img{:src=>"/images/slideshow/installazione-gnulinux.jpg",:alt=>"slide1"}
 					.carousel-caption
-						%h3 First label
-						%p Questo è un testo di prova
+						%h3 Installa GNU/Linux
+						%p Vieni a trovarci e ti aiuteremo ad installare una distribuzione GNU/Linux
 				.item
-					%img(src="http://lorempixel.com/1000/400/sports/" alt="slide1")
+					%img{:src=>"/images/slideshow/presentazione.jpg",:alt=>"slide2"}
 					.carousel-caption
-						%h3 Second label
+						%h3 Eventi
+						%p Presentazioni, workshop e talk tutta la giornata
 				.item
-					%img(src="http://lorempixel.com/1000/400/sports/" alt="slide1")
+					%img{:src=>"/images/slideshow/free-software.jpg",:alt=>"slide3"}
 					.carousel-caption
-						%h3 Third label
+						%h3 Appassionati
+						%p Vienici a trovare e respirerai la passione per il software libero
 
 .row
 	.col-md-7.col-md-offset-3
