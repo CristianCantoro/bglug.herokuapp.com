@@ -25,3 +25,23 @@
 #bottoni-modulo{
 	padding-bottom: 2em;
 }
+
+// Modifiche per centratura icone e Google Maps
+.fullrow {
+  width: 100px;
+}
+
+.fullrow i.icon-4x {
+  display: block;
+  margin: 0px auto;
+  width: 48px;
+  height: 57px;
+}
+
+#map_canvas {
+  display: block;
+  margin: 0px auto;
+  width: 700px;
+  height: 480px;
+  margin-bottom: 20px;
+}
