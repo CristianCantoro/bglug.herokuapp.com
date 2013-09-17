@@ -35,7 +35,7 @@
           title: 'Parcheggio C6'
         });
         // events
-        var infocontent = "<b>Spazio Polaresco</b><br/>Via del Polaresco, 15<br/>Bergamo<br/><a href=\"https://maps.google.it/maps?f=q&source=s_q&hl=it&geocode=&q=Spazio+Polaresco,+Via+del+Polaresco,+15,+Bergamo+BG&aq=0&oq=Spazio+Polaresco&sll=45.657417,9.96278&sspn=1.958154,4.932861&vpsrc=0&t=h&ie=UTF8&hq=Spazio+Polaresco,&hnear=Via+del+Polaresco,+15,+24129+Bergamo,+Provincia+di+Bergamo,+BG&ll=45.691897,9.63501&spn=0.007644,0.019269&z=16&iwloc=A&cid=16915148490896185851\" title=\"Google Maps\">Google Maps</a> | <a href=\"http://www.giovani.bg.it/spazio-polaresco.html\" title=\"Sito Web\">Sito Web</a>";
+        var infocontent = "<div id=\"gmaps-bubble\"><b>Spazio Polaresco</b><br/>Via del Polaresco, 15<br/>Bergamo<br/><a href=\"https://maps.google.it/maps?f=q&source=s_q&hl=it&geocode=&q=Spazio+Polaresco,+Via+del+Polaresco,+15,+Bergamo+BG&aq=0&oq=Spazio+Polaresco&sll=45.657417,9.96278&sspn=1.958154,4.932861&vpsrc=0&t=h&ie=UTF8&hq=Spazio+Polaresco,&hnear=Via+del+Polaresco,+15,+24129+Bergamo,+Provincia+di+Bergamo,+BG&ll=45.691897,9.63501&spn=0.007644,0.019269&z=16&iwloc=A&cid=16915148490896185851\" title=\"Google Maps\">Google Maps</a> | <a href=\"http://www.giovani.bg.it/spazio-polaresco.html\" title=\"Sito Web\">Sito Web</a></div>";
         var ldinfowin = new google.maps.InfoWindow({
           content: infocontent
         });

@@ -18,12 +18,13 @@
   width: 20em; 
 }
 
-#mappa-image{
-	margin-top: 1em;
-}
-
 #bottoni-modulo{
 	padding-bottom: 2em;
+}
+
+#gmaps-bubble {
+  font-family: "Ubuntu";
+  font-size: 14px;
 }
 
 // Modifiche per centratura icone e Google Maps
@@ -40,12 +41,16 @@
 
 #map_canvas {
   display: block;
-  margin: 0px auto;
+  margin: 1em auto;
+  margin-bottom: 2em;
   width: 700px;
   height: 480px;
-  margin-bottom: 20px;
 }
 
-.carousel-caption, a {
+.carousel-caption h3 a {
   color: white;
+}
+
+.carousel-caption h3 a:hover {
+  color: lightgray;
 }
