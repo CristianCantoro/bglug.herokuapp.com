@@ -45,3 +45,7 @@
   height: 480px;
   margin-bottom: 20px;
 }
+
+.carousel-caption, a {
+  color: white;
+}

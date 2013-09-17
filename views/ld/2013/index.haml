@@ -1,31 +1,37 @@
 .row#slider
-	.col-md-8.col-md-offset-2
-		.carousel.slide#carousel-example-generic
-			%ol.carousel-indicators
-				%li(data-target='#carousel-example-generic' data-slide-to="0" class="active")
-				%li(data-target='#carousel-example-generic' data-slide-to="1")
-				%li(data-target='#carousel-example-generic' data-slide-to="2")
-			.carousel-inner
-				.item.active
-					%img{:src=>"/images/slideshow/installazione-gnulinux.jpg",:alt=>"slide1"}
-					.carousel-caption
-						%h3 Installa GNU/Linux
-						%p Vieni a trovarci e ti aiuteremo ad installare una distribuzione GNU/Linux
-				.item
-					%img{:src=>"/images/slideshow/presentazione.jpg",:alt=>"slide2"}
-					.carousel-caption
-						%h3 Eventi
-						%p Presentazioni, workshop e talk tutta la giornata
-				.item
-					%img{:src=>"/images/slideshow/free-software.jpg",:alt=>"slide3"}
-					.carousel-caption
-						%h3 Appassionati
-						%p Vienici a trovare e respirerai la passione per il software libero
+        .col-md-8.col-md-offset-2
+                .carousel.slide#carousel-example-generic
+                        %ol.carousel-indicators
+                                %li(data-target='#carousel-example-generic' data-slide-to="0" class="active")
+                                %li(data-target='#carousel-example-generic' data-slide-to="1")
+                                %li(data-target='#carousel-example-generic' data-slide-to="2")
+                        .carousel-inner
+                                .item.active
+                                        %img{:src=>"/images/slideshow/installazione-gnulinux.jpg",:alt=>"slide1"}
+                                        .carousel-caption
+                                                %h3
+                                                        %a(href="/ld/2013/installa" title="Installa GNU/Linux")
+                                                                Installa GNU/Linux
+                                                %p Vieni a trovarci e ti aiuteremo ad installare una distribuzione GNU/Linux
+                                .item
+                                        %img{:src=>"/images/slideshow/presentazione.jpg",:alt=>"slide2"}
+                                        .carousel-caption
+                                                %h3
+                                                        %a(href="/ld/2013/programma" title="Programma degli eventi")
+                                                                Eventi
+                                                %p Presentazioni, workshop e talk tutta la giornata
+                                .item
+                                        %img{:src=>"/images/slideshow/free-software.jpg",:alt=>"slide3"}
+                                        .carousel-caption
+                                                %h3
+                                                        %a(href="/ld/2013/segui")
+                                                                Appassionati
+                                                %p Vienici a trovare e respirerai la passione per il software libero
 
 .row
-	.col-md-7.col-md-offset-3
-		%a(href="http://www.linuxday.it" title="LInux Day")
-			%img{:src => 'http://www.linuxday.it/sites/default/files/banners/banner_468x60.png', :alt => 'Linux Day 2013', :title => 'Linux Day 2013', :width => '500px', :style => 'margin-left:4em;margin-top:1em;'}
+        .col-md-7.col-md-offset-3
+                %a(href="http://www.linuxday.it" title="LInux Day")
+                        %img{:src => 'http://www.linuxday.it/sites/default/files/banners/banner_468x60.png', :alt => 'Linux Day 2013', :title => 'Linux Day 2013', :width => '500px', :style => 'margin-left:4em;margin-top:1em;'}
 /%h1 Anche per quest'anno, l'associazione
 /#bgluglogo
 /  %img{:src => '/images/bgluglogo.png', :alt => 'BGlug Logo', :title => 'BGlug'} 
