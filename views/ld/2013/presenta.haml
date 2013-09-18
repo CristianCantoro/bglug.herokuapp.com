@@ -154,12 +154,12 @@
     .form-group
       %label.col-lg-2.control-label(for='abstract') Breve sommario del tuo intervento
       .col-lg-6
-        %textarea.form-control#abstract(name="abstract" rows="6" placeholder="Scrivi qui qualche riga riguardo alla tua presentazione")
+        %textarea.form-control#abstract(name="abstract" rows="6" placeholder="Scrivi qui qualche riga riguardo alla tua presentazione" maxlength="300")
         %p.counter#counter 300 lettere rimanenti.
     .form-group
       %label.col-lg-2.control-label(for='altrerichieste') Altre necessità per la presentazione
       .col-lg-6
-        %textarea.form-control#altrerichieste(name="altrerichieste" rows="6" placeholder="Scrivi qui altro materiale necessario al tuo intervento (PC e proiettore sono sempre forniti)")
+        %textarea.form-control#altrerichieste(name="altrerichieste" rows="6" placeholder="Scrivi qui altro materiale necessario al tuo intervento (PC e proiettore sono sempre forniti)" maxlength="300")
         %p.counter#arcounter 300 lettere rimanenti.
     .form-group
       = haml 'ld/2013/captcha'.to_sym

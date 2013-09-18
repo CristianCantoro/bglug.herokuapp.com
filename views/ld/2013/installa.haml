@@ -148,7 +148,7 @@
     .form-group
       %label.col-lg-2.control-label(for='note') Note
       .col-lg-6
-        %textarea.form-control(name="note" rows="6" placeholder="Scrivi qui ulteriori informazioni degne di nota")
+        %textarea.form-control(name="note" rows="6" placeholder="Scrivi qui ulteriori informazioni degne di nota" maxlength="300")
         %p.counter#counter 300 lettere rimanenti.
     .form-group
       = haml 'ld/2013/captcha'.to_sym
