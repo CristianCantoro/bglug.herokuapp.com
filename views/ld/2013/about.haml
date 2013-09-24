@@ -1,3 +1,8 @@
+%link{:href => "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css", :rel => "stylesheet"}/
+/[if lte IE 8]
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+%script{:src => "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"}
+
 %ol.breadcrumb
   %li
     %a(href="/ld/2013") Home
@@ -42,6 +47,9 @@
         (BGlug)](http://bglug.it) organizza l'evento presso lo [Spazio Polaresco](http://www.giovani.bg.it/spazio-polaresco.html), in via del Polaresco 15 a Bergamo.
 .row
   .fullrow
-    %script(src="https://maps.googleapis.com/maps/api/js?sensor=false")
-    %script(type="text/javascript" src="/js/polaresco_gmaps.js")
-    #map_canvas &nbsp;
+    %script(src="https://maps.googleapis.com/maps/api/js?v=3.2&sensor=false")
+    %script(type="text/javascript" src="/js/parkings_geojson.js")
+    %script(type="text/javascript" src="/js/leaflet-plugins/layer/tile/Bing.js")
+    %script(type="text/javascript" src="/js/leaflet-plugins/layer/tile/Google.js")
+    %script(type="text/javascript" src="/js/polaresco_osm.js")
+    #map_canvas
